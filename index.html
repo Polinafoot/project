@@ -9,83 +9,117 @@
 </head>
 <body>
 
-<header>
-    <h1>Вишлист</h1>
-    <nav>
-        <a href="#about">О нас</a>
-        <a href="#features">Особенности</a>
-        <a href="#how-to-use">Как использовать</a>
-        <a href="#contact">Контакты</a>
-    </nav>
-</header>
-
-<div class="hero">
-    <h2>Создайте свой идеальный вишлист</h2>
-    <p>Легко добавляйте желаемые товары и делитесь ими с друзьями!</p>
-</div>
-
-Markup
-
-
-<section id="about" class="section">
-    <h2>Что такое Вишлист?</h2>
-    <p>
-        Вишлист — это ваш личный список желаемых подарков, который поможет вам организовать свои желания и мечты.
-        С помощью нашего сайта вы можете легко добавлять товары, делиться своим списком с друзьями и получать подарки,
-        о которых мечтали.
-    </p>
-    <div class="image-container">
-        <img src="images/Many_Gifts_Bowknot_526765_2560x1440.jpg" alt="Пример вишлиста">
+    <header>
+        <h1>Вишлист</h1>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#features">Особенности</a>
+            <a href="#how-to-use">Как использовать</a>
+            <a href="#contact">Контакты</a>
+            <a href="login.html">Вход</a>
+            <a href="register.html">Регистрация</a>
+            <a href="wishlist.html">Мой Вишлист</a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h2>Создайте свой идеальный вишлист</h2>
+        <p>Легко добавляйте желаемые товары и делитесь ими с друзьями!</p>
     </div>
-</section>
-
-<section id="features" class="section">
-    <h2>Почему стоит использовать наш сайт?</h2>
-    <p>
-        - Удобный интерфейс для добавления и редактирования подарков.<br>
-        - Возможность делиться своим вишлистом с друзьями и родственниками.<br>
-        - Получайте уведомления о специальных предложениях и скидках на ваши желаемые товары.
-    </p>
-    <div class="image-container">
-        <img src="images/690761.jpg" alt="Особенности">
-    </div>
-</section>
-
-<section id="how-to-use" class="section">
-    <h2>Как использовать Вишлист?</h2>
-    <p>
-        Чтобы начать использовать наш сервис, просто зарегистрируйтесь на сайте. После этого вы сможете создавать
-        свой вишлист, добавлять туда товары и делиться им с другими.
-    </p>
-    <div class="image-container">
-        <img src="https://via.placeholder.com/400x300/ffb6c1/ffffff?text=Как+использовать" alt="Как использовать">
-    </div>
-</section>
-
-<section id="contact" class="section">
-    <h2>Контакты</h2>
-    <p>
-        Если у вас есть вопросы или предложения, не стесняйтесь обращаться к нам по электронной почте:
-        support@wishlist.com
-    </p>
-</section>
-
-<footer>
-    <p>&copy; 2025 Вишлист. Все права защищены.</p>
-</footer>
-
-<script>
-    // Плавная прокрутка при переходе по якорным ссылкам
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
-
-</body>
-</html>
+    
+    <section id="about" class="section">
+        <h2>Что такое Вишлист?</h2>
+        <p>
+            Вишлист — это ваш личный список желаемых подарков, который поможет вам организовать свои желания и мечты.
+            С помощью нашего сайта вы можете легко добавлять товары и делиться ими с друзьями и близкими.
+        </p>
+    </section>
+    
+    <section id="features" class="section">
+        <h2>Особенности</h2>
+        <p>
+            - Удобный интерфейс<br>
+            - Возможность делиться вишлистом<br>
+            - Легкое добавление товаров<br>
+            - Персонализированные рекомендации
+        </p>
+    </section>
+    
+    <section id="how-to-use" class="section">
+        <h2>Как использовать</h2>
+        <p>
+            Просто зарегистрируйтесь, войдите в систему и начните добавлять товары в ваш вишлист. Вы можете также
+            редактировать и удалять товары по мере необходимости.
+        </p>
+    </section>
+    
+    <section id="contact" class="section">
+        <h2>Контакты</h2>
+        <p>Если у вас есть вопросы, свяжитесь с нами по электронной почте: support@wishlist.com</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Вишлист. Все права защищены.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    </body>
+    </html>
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Мой Вишлист</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+    <header>
+        <h1>Ваш Вишлист</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="wishlist.html">Мой Вишлист</a>
+            <a href="login.html">Вход</a>
+            <a href="register.html">Регистрация</a>
+        </nav>
+    </header>
+    
+    <main class="section">
+        <h2>Добавьте товары в ваш вишлист:</h2>
+        <input type="text" id="itemInput" placeholder="Введите название товара">
+        <button onclick="addItem()">Добавить</button>
+    
+        <ul id="itemList"></ul>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Вишлист. Все права защищены.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+    </body>
+    </html>
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Вход в Вишлист</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+    <header>
+        <h1>Вход в Вишлист</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="wishlist.html">Мой Вишлист</a>
+            <a href="login.html">Вход</a>
+            <a href="register.html">Регистрация</a>
+        </nav>
+    </header>
+    
+    <main class="section">
