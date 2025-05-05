@@ -1,8 +1,28 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    }
+    @font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    }
+    @font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffeef8;
+    background-color: #861150;
     color: #333;
     overflow-x: hidden;
 }
@@ -120,6 +140,6 @@ footer {
 }
 
 footer p {
-    color: #d5006d;
+    color: #861150;
 }
 
