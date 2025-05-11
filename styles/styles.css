@@ -277,3 +277,13 @@ button:focus {
     outline: none;
 }
 
+/* Добавление тени к изображениям */
+.image-container img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень с размытой границей */
+    transition: box-shadow 0.3s ease-in-out; /* Плавный переход при наведении */
+}
+
+/* Эффект при наведении курсора на изображения (увеличение тени) */
+.image-container img:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличенная тень при наведении */
+}
