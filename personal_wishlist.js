@@ -78,8 +78,8 @@ function renderWishlist() {
             <img src="${item.image}" alt="${item.name}" style="max-width: 100px;">
             <span>Категория: ${item.category}</span>
             <br>
-            <button onclick="editItem(${index})">✏️ Редактировать</button>
-            <button onclick="deleteItem(${index})">❌ Удалить</button>
+            <button onclick="editItem(${index})"> Редактировать</button>
+            <button onclick="deleteItem(${index})"> Удалить</button>
         `;
         list.appendChild(listItem);
     });
