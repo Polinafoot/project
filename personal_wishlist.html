@@ -4,42 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой Вишлист</title>
-
-    <!-- Подключаем normalize.css из папки styles -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    
-    <!-- Подключаем собственные стили -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize.css"> <!-- Подключение normalize.css -->
 </head>
-<body>
+<body class="page-body">
 
-    <header>
-        <h1>Мой Вишлист</h1>
-        <nav>
-            <a href="index.html">Вернуться на главную</a>
+    <header class="header">
+        <h1 class="header-title">Мой Вишлист</h1>
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Вернуться на главную</a>
         </nav>
     </header>
 
-    <div class="hero">
-        <h2>Добавьте товары в ваш вишлист</h2>
-        <p>Легко добавляйте, редактируйте и удаляйте товары.</p>
+    <div class="hero hero-main">
+        <h2 class="hero-title">Добавьте товары в ваш вишлист</h2>
+        <p class="hero-description">Легко добавляйте, редактируйте и удаляйте товары.</p>
     </div>
 
-    <section id="wishlist" class="section">
-        <h3>Добавьте товар в ваш вишлист:</h3>
-        <input type="text" id="itemInput" placeholder="Название товара">
-        <input type="text" id="itemLink" placeholder="Ссылка на товар">
-        <input type="text" id="itemImage" placeholder="URL изображения">
-        <input type="text" id="itemDescription" placeholder="Описание">
-        <input type="text" id="itemCategory" placeholder="Категория">
-        <button onclick="addItem()">Добавить</button>
+    <section id="wishlist" class="section wishlist-section">
+        <h3 class="section-title">Добавьте товар в ваш вишлист:</h3>
+        <div class="wishlist-form">
+            <input type="text" id="itemInput" class="input-field" placeholder="Название товара">
+            <input type="text" id="itemLink" class="input-field" placeholder="Ссылка на товар">
+            <input type="text" id="itemImage" class="input-field" placeholder="URL изображения">
+            <input type="text" id="itemDescription" class="input-field" placeholder="Описание">
+            <input type="text" id="itemCategory" class="input-field" placeholder="Категория">
+            <button class="button-add" onclick="addItem()">Добавить</button>
+        </div>
 
-        <h3>Ваш вишлист:</h3>
-        <ul id="itemList"></ul>
+        <h3 class="section-title">Ваш вишлист:</h3>
+        <ul id="itemList" class="wishlist-list"></ul>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Вишлист. Все права защищены.</p>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2025 Вишлист. Все права защищены.</p>
     </footer>
 
     <script src="personal_wishlist.js"></script>
