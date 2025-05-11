@@ -142,4 +142,138 @@ footer {
 footer p {
     color: #861150;
 }
+.section input, .section button {
+    margin: 5px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.section button {
+    background-color: #5cb85c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.section button:hover {
+    background-color: #4cae4c;
+}
+
+#itemList li {
+    margin: 10px 0;
+    list-style: none;
+}
+
+#itemList img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0;
+}
+
+#itemList a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+#itemList a:hover {
+    text-decoration: underline;
+}
+.create-wishlist {
+    text-align: center;
+    margin: 20px;
+}
+
+.create-wishlist button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-wishlist button:hover {
+    background-color: #45a049;
+}
+/* Стили для кнопки "Сделать свой вишлист" */
+.wishlist-button {
+    display: block;
+    width: 300px;
+    height: 50px;
+    margin: 50px auto;
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px; /* Выравнивание текста по центру */
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.wishlist-button:hover {
+    background-color: #45a049; /* Более темный зеленый при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.wishlist-button:focus {
+    outline: none;
+}
+
+/* Стили для кнопок редактирования и удаления */
+.edit-button, .delete-button {
+    background-color: #4CAF50; /* Зеленый цвет для редактирования */
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-button {
+    background-color: #f44336; /* Красный цвет для удаления */
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #45a049; /* Темно-зеленый для редактирования */
+}
+
+.delete-button:hover {
+    background-color: #d32f2f; /* Темно-красный для удаления */
+}
+
+button:focus {
+    outline: none;
+}
+/* Стили для кнопок редактирования и удаления */
+.action-buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.action-button {
+    background-color: #4CAF50; /* Зеленый цвет для редактирования */
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    margin-right: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #45a049; /* Темно-зеленый для редактирования */
+}
+
+.action-button:focus {
+    outline: none;
+}
 

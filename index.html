@@ -9,17 +9,19 @@
 <body>
 
     <header>
-        <h1>Вишлист</h1>
+        <h1>Wishlist</h1>
         <nav>
             <a href="#about">О нас</a>
             <a href="#features">Особенности</a>
             <a href="#how-to-use">Как использовать</a>
             <a href="#contact">Контакты</a>
-            <a href="login.html">Вход</a>
-            <a href="register.html">Регистрация</a>
-            <a href="wishlist.html">Мой Вишлист</a>
+            <!-- Ссылка на страницу с добавлением товаров -->
+            <a href="personal_wishlist.html" class="wishlist-link">Перейти в мой вишлист</a>
         </nav>
     </header>
+        </nav>
+    </header>
+
     
     <div class="hero">
         <h2>Создайте свой идеальный вишлист</h2>
@@ -53,21 +55,14 @@
     <section id="how-to-use" class="section">
         <h2>Как использовать</h2>
         <p>
-            Просто зарегистрируйтесь, войдите в систему и начните добавлять товары в ваш вишлист. Вы можете также
-            редактировать и удалять товары по мере необходимости.
-        </p>
+            Просто добавляйте товары в ваш вишлист, указывая название, ссылку, изображение, описание и категорию.
+            Вы можете редактировать и удалять товары по мере необходимости.
         <div class="image-container">
-            <img src="images/upload-shutterstock_2463565569-pic4_zoom-1500x1500-5662.jpg" alt="Как использовать">
+            <img src="images/upload-shutterstock_2463565569-pic4_zoom-1500x1500-5662.jpg" alt="Особенности">
         </div>
+        </p>
     </section>
     
-    <main class="section">
-        <h2>Добавьте товары в ваш вишлист:</h2>
-        <input type="text" id="itemInput" placeholder="Введите название товара">
-        <button onclick="addItem()">Добавить</button>
-    
-        <ul id="itemList"></ul>
-    </main>
     
     <section id="contact" class="section">
         <h2>Контакты</h2>
@@ -77,7 +72,8 @@
     <footer>
         <p>&copy; 2025 Вишлист. Все права защищены.</p>
     </footer>
-    
+
+
     <script src="script.js"></script>
-    </body>
-    </html>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Вишлист</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Мой Вишлист</h1>
+        <nav>
+            <a href="index.html">Вернуться на главную</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Добавьте товары в ваш вишлист</h2>
+        <p>Легко добавляйте, редактируйте и удаляйте товары.</p>
+    </div>
+
+    <section id="wishlist" class="section">
+        <h3>Добавьте товар в ваш вишлист:</h3>
+        <input type="text" id="itemInput" placeholder="Название товара">
+        <input type="text" id="itemLink" placeholder="Ссылка на товар">
+        <input type="text" id="itemImage" placeholder="URL изображения">
+        <input type="text" id="itemDescription" placeholder="Описание">
+        <input type="text" id="itemCategory" placeholder="Категория">
+        <button onclick="addItem()">Добавить</button>
+
+        <h3>Ваш вишлист:</h3>
+        <ul id="itemList"></ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Вишлист. Все права защищены.</p>
+    </footer>
+
+    <script src="personal_wishlist.js"></script>
+</body>
+</html>
