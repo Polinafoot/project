@@ -307,4 +307,31 @@ button:focus {
     footer p {
         font-size: 0.9rem;
     }
+     html {
+            scroll-behavior: smooth;
+        }
+}
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff69b4; /* Розовый цвет */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Круглая форма */
+    font-size: 24px;
+    display: none; /* Скрыта по умолчанию */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+#scrollToTop:hover {
+    opacity: 1;
+    background-color: #ff1493; /* Более яркий розовый при наведении */
 }
