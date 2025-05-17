@@ -2,39 +2,40 @@ let editIndex = -1; // Глобальная переменная для отсл
 
 // Добавление или обновление товара в вишлист
 function addItem() {
-    const itemName = document.getElementById("itemInput").value;
-    const itemLink = document.getElementById("itemLink").value;
-    const itemImage = document.getElementById("itemImage").value;
-    const itemDescription = document.getElementById("itemDescription").value;
-    const itemCategory = document.getElementById("itemCategory").value;
+    const itemName = document.getElementById("itemInput").value.trim();
+    const itemLink = document.getElementById("itemLink").value.trim();
+    const itemImage = document.getElementById("itemImage").value.trim();
+    const itemDescription = document.getElementById("itemDescription").value.trim();
+    const itemCategory = document.getElementById("itemCategory").value.trim();
 
-    if (itemName) {
-        const wishlist = getWishlist();
-
-        const newItem = {
-            name: itemName,
-            link: itemLink,
-            image: itemImage,
-            description: itemDescription,
-            category: itemCategory
-        };
-
-        if (editIndex === -1) {
-            // Добавление нового товара
-            wishlist.push(newItem);
-        } else {
-            // Обновление существующего товара
-            wishlist[editIndex] = newItem;
-            editIndex = -1;
-            document.getElementById("addButton").textContent = "Добавить";
-        }
-
-        saveWishlist(wishlist);
-        renderWishlist();
-        clearInputFields();
-    } else {
+    if (!itemName) {
         alert("Введите название товара.");
+        return;
     }
+
+    const wishlist = getWishlist();
+
+    const newItem = {
+        name: itemName,
+        link: itemLink,
+        image: itemImage,
+        description: itemDescription,
+        category: itemCategory
+    };
+
+    if (editIndex === -1) {
+        // Добавление нового товара
+        wishlist.push(newItem);
+    } else {
+        // Обновление существующего товара
+        wishlist[editIndex] = newItem;
+        editIndex = -1;
+        document.getElementById("addButton").textContent = "Добавить";
+    }
+
+    saveWishlist(wishlist);
+    renderWishlist();
+    clearInputFields();
 }
 
 // Очистка полей ввода формы
@@ -71,13 +72,13 @@ function renderWishlist() {
 
     wishlist.forEach((item, index) => {
         const listItem = document.createElement("li");
+        listItem.className = "wishlist-item";
         listItem.innerHTML = `
             <h3>${item.name}</h3>
-            <a href="${item.link}" target="_blank">Перейти к товару</a>
+            <a href="${item.link}" target="_blank" rel="noopener noreferrer">Перейти к товару</a>
             <p>${item.description}</p>
             <img src="${item.image}" alt="${item.name}" style="max-width: 100px;">
-            <span>Категория: ${item.category}</span>
-            <br>
+            <p><em>Категория: ${item.category}</em></p>
             <button onclick="editItem(${index})">Редактировать</button>
             <button onclick="deleteItem(${index})">Удалить</button>
         `;
@@ -91,6 +92,13 @@ function deleteItem(index) {
     wishlist.splice(index, 1);
     saveWishlist(wishlist);
     renderWishlist();
+
+    // Если мы в режиме редактирования текущего удаленного элемента — сбросим
+    if (editIndex === index) {
+        editIndex = -1;
+        clearInputFields();
+        document.getElementById("addButton").textContent = "Добавить";
+    }
 }
 
 // Редактирование товара — заполнение формы значениями выбранного товара
@@ -130,7 +138,7 @@ if (wishlistLink) {
     });
 }
 
-// Новый слушатель — логируем все клики по странице для проверки
+// Новый слушатель — логируем все клики по странице для проверки (если нужно, можно удалить)
 document.addEventListener('click', function(event) {
     console.log('Клик произошёл! Элемент:', event.target);
 });

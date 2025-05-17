@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Смарт-часы",
+    "link": "https://example.com/smartwatch",
+    "image": "images/smartwatch.jpg",
+    "description": "Умные часы с множеством функций",
+    "category": "Гаджеты"
+  },
+  {
+    "name": "Книга по программированию",
+    "link": "https://example.com/book",
+    "image": "images/book.jpg",
+    "description": "Лучшее руководство для начинающих",
+    "category": "Книги"
+  }
+]

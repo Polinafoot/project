@@ -335,3 +335,41 @@ button:focus {
     opacity: 1;
     background-color: #ff1493; /* Более яркий розовый при наведении */
 }
+
+/* Предзагрузчик */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f8bbd0; /* светло-розовый */
+    border-top-color: #e91e63; /* насыщенный розовый */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Плавное скрытие предзагрузчика */
+#preloader.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+
