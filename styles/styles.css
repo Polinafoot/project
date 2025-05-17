@@ -26,7 +26,9 @@ body {
     color: #333;
     overflow-x: hidden;
 }
-
+.hero { 
+padding-top: 150px;
+}
 header {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -149,69 +151,7 @@ footer p {
     border: 1px solid #ccc;
 }
 
-.section button {
-    background-color: #5cb85c;
-    color: #fff;
-    cursor: pointer;
-}
 
-.section button:hover {
-    background-color: #4cae4c;
-}
-
-#itemList li {
-    margin: 10px 0;
-    list-style: none;
-}
-
-#itemList img {
-    width: 100px;
-    height: auto;
-    margin: 5px 0;
-}
-
-#itemList a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-#itemList a:hover {
-    text-decoration: underline;
-}
-.create-wishlist {
-    text-align: center;
-    margin: 20px;
-}
-
-.create-wishlist button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.create-wishlist button:hover {
-    background-color: #45a049;
-}
-/* Стили для кнопки "Сделать свой вишлист" */
-.wishlist-button {
-    display: block;
-    width: 300px;
-    height: 50px;
-    margin: 50px auto;
-    background-color: #4CAF50; /* Зеленый цвет */
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    line-height: 50px; /* Выравнивание текста по центру */
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
 
 .wishlist-button:hover {
     background-color: #45a049; /* Более темный зеленый при наведении */
@@ -286,4 +226,85 @@ button:focus {
 /* Эффект при наведении курсора на изображения (увеличение тени) */
 .image-container img:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличенная тень при наведении */
+}
+
+
+@media screen and (max-width: 768px) {
+    /* header */
+    header {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    nav {
+        margin-top: 5px;
+    }
+    nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+
+    /* hero */
+    .hero {
+        padding-top: 100px;
+        height: 400px;
+        background-position: center center;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* section */
+    .section {
+        padding: 50px 15px;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 1rem;
+        max-width: 90%;
+        margin: 0 auto;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    /* image container */
+    .image-container img {
+        max-width: 280px;
+        border-radius: 12px;
+    }
+
+    /* inputs and buttons in section */
+    .section input, .section button {
+        width: 90%;
+        font-size: 1rem;
+        padding: 8px;
+        margin: 5px auto;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    /* action buttons */
+    .action-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 15px;
+    }
+    .action-button {
+        width: 100%;
+        margin: 8px 0;
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    /* footer */
+    footer p {
+        font-size: 0.9rem;
+    }
 }

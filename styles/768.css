@@ -1,0 +1,81 @@
+@media screen and (max-width: 768px) {
+    /* Адаптация шапки */
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        margin-top: 5px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+
+    /* Герой-блок */
+    .hero {
+        padding-top: 100px;
+        height: 400px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Секции */
+    .section {
+        padding: 50px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Изображения */
+    .image-container img {
+        max-width: 250px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Кнопки и формы */
+    .section input, .section button {
+        width: 90%;
+        font-size: 1rem;
+        padding: 8px;
+        margin: 5px auto;
+    }
+
+    .action-button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Футер */
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    /* Анимации */
+    .hero h2, .hero p {
+        animation: fadeInUp 1s ease-in-out;
+    }
+}
