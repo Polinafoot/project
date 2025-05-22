@@ -13,3 +13,9 @@ const wishlistLink = document.querySelector('.wishlist-link');
 wishlistLink.addEventListener('click', function(event) {
     alert('Вы переходите на страницу с вашим вишлистом!');
 });
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.style.display = 'none';
+  }
+});

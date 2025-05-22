@@ -1,16 +1,16 @@
 [
   {
-    "name": "Смарт-часы",
-    "link": "https://example.com/smartwatch",
-    "image": "images/smartwatch.jpg",
-    "description": "Умные часы с множеством функций",
-    "category": "Гаджеты"
+    "title": "Наушники Sony",
+    "link": "https://example.com/sony",
+    "description": "Беспроводные наушники с шумоподавлением",
+    "image": "https://example.com/image.jpg",
+    "category": "Электроника"
   },
   {
-    "name": "Книга по программированию",
+    "title": "Книга по JavaScript",
     "link": "https://example.com/book",
-    "image": "images/book.jpg",
-    "description": "Лучшее руководство для начинающих",
+    "description": "Глубокое погружение в JS",
+    "image": "https://example.com/book.jpg",
     "category": "Книги"
   }
 ]

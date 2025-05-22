@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles/normalize.css">
 </head>
 <body class="page-body">
+<!-- Preloader -->
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
+
 
     <header class="header">
         <h1 class="header-title">Wishlist</h1>
@@ -20,6 +25,8 @@
         </nav>
     </header>
 
+
+    
     <div class="hero hero-main">
         <h2 class="hero-title">Создайте свой идеальный вишлист</h2>
         <p class="hero-description">Легко добавляйте желаемые товары и делитесь ими с друзьями!</p>
@@ -91,7 +98,15 @@
 
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
+            
         }
-    </script>
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.style.display = 'none';
+        }
+    });
+</script>
+
 </body>
 </html>

@@ -24,10 +24,8 @@ function addItem() {
     };
 
     if (editIndex === -1) {
-        // Добавление нового товара
         wishlist.push(newItem);
     } else {
-        // Обновление существующего товара
         wishlist[editIndex] = newItem;
         editIndex = -1;
         document.getElementById("addButton").textContent = "Добавить";
@@ -38,7 +36,6 @@ function addItem() {
     clearInputFields();
 }
 
-// Очистка полей ввода формы
 function clearInputFields() {
     document.getElementById("itemInput").value = "";
     document.getElementById("itemLink").value = "";
@@ -47,24 +44,21 @@ function clearInputFields() {
     document.getElementById("itemCategory").value = "";
 }
 
-// Получаем список товаров из LocalStorage
 function getWishlist() {
     const wishlistData = localStorage.getItem("wishlist");
     try {
         return wishlistData ? JSON.parse(wishlistData) : [];
     } catch (error) {
         console.error("Ошибка при разборе данных вишлиста:", error);
-        localStorage.removeItem("wishlist"); // Очистить поврежденные данные
+        localStorage.removeItem("wishlist");
         return [];
     }
 }
 
-// Сохраняем список товаров в LocalStorage
 function saveWishlist(wishlist) {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
 }
 
-// Отображаем список товаров на странице
 function renderWishlist() {
     const list = document.getElementById("itemList");
     list.innerHTML = "";
@@ -86,14 +80,12 @@ function renderWishlist() {
     });
 }
 
-// Удаление товара из списка
 function deleteItem(index) {
     const wishlist = getWishlist();
     wishlist.splice(index, 1);
     saveWishlist(wishlist);
     renderWishlist();
 
-    // Если мы в режиме редактирования текущего удаленного элемента — сбросим
     if (editIndex === index) {
         editIndex = -1;
         clearInputFields();
@@ -101,7 +93,6 @@ function deleteItem(index) {
     }
 }
 
-// Редактирование товара — заполнение формы значениями выбранного товара
 function editItem(index) {
     const wishlist = getWishlist();
     const item = wishlist[index];
@@ -116,7 +107,29 @@ function editItem(index) {
     editIndex = index;
 }
 
-// Анимация при загрузке страницы — плавное появление блока .hero и отрисовка списка
+function loadJsonData() {
+    fetch("wishlist.json")
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById("itemList");
+            data.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.className = "wishlist-item";
+                listItem.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">Перейти к товару</a>
+                    <p>${item.description}</p>
+                    <img src="${item.image}" alt="${item.title}" style="max-width: 100px;">
+                    <p><em>Категория: ${item.category}</em></p>
+                `;
+                list.appendChild(listItem);
+            });
+        })
+        .catch(error => {
+            console.error("Ошибка при загрузке JSON:", error);
+        });
+}
+
 window.onload = function() {
     const hero = document.querySelector('.hero');
     if (hero) {
@@ -125,12 +138,18 @@ window.onload = function() {
             hero.style.transition = 'opacity 1s';
             hero.style.opacity = 1;
         }, 100);
+        // Скрытие предзагрузчика после загрузки
+const preloader = document.getElementById("preloader");
+if (preloader) {
+    preloader.classList.add("hidden");
+}
     }
 
-    renderWishlist();
+    renderWishlist();   // LocalStorage
+    loadJsonData();     // data.json
 };
 
-// Обработка клика по ссылке "Мой вишлист" — вывод alert
+// Доп. отладка (можно удалить)
 const wishlistLink = document.querySelector('.wishlist-link');
 if (wishlistLink) {
     wishlistLink.addEventListener('click', function(event) {
@@ -138,59 +157,6 @@ if (wishlistLink) {
     });
 }
 
-// Новый слушатель — логируем все клики по странице для проверки (если нужно, можно удалить)
 document.addEventListener('click', function(event) {
     console.log('Клик произошёл! Элемент:', event.target);
 });
-
-const cardsCon = document.querySelector(".job");
-    if (cardsCon) {
-        const cardList = cardsCon.querySelector(".job__list");
- 
-        // Пример URL для получения данных с сервера
-        const apiUrl = "data.json";
-
-         // Функция для создания карточки
-        const createCard = (
-            imageUrl,
-            iconAlt,
-            iconWidth,
-            iconHeight,
-            title,
-            description
-        ) => {
-            // Шаблонные строки и подстановки
-            const card = `
-                <li class="job__item" href="#">
-                      <img class="job__img" src="${imageUrl}" alt="${iconAlt}" width="${iconWidth}" height="${iconHeight}">
-                    <h3 class="job__title">${title}</h3>
-                    <p class="job__description">${description}</p>
-                </li>
-            `;
-            return card;
-        };
-        // Загрузка данных с сервера
-        fetch(apiUrl)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data); // Данные
-                console.log(typeof data); // Тип полученных данных
- 
-                data.forEach((item) => {
-                    const cardElement = createCard(
-                        item.image,
-                        item.iconAlt,
-                        item.iconWidth,
-                        item.iconHeight,
-                        item.title,
-                        item.description
-                    );
-                    cardList.insertAdjacentHTML("beforeend", cardElement);
-                });
-            })
-            .catch((error) => {
-                console.error("Ошибка при загрузке данных:", error);
-            });
- 
-
-}
