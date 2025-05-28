@@ -14,30 +14,30 @@ window.addEventListener('load', () => {
   if (preloader) {
     preloader.style.display = 'none';
   }
-});
 
-// Обработчик клика на ссылке вишлиста, если элемент есть
-const wishlistLink = document.querySelector('.wishlist-link');
-if (wishlistLink) {
-  wishlistLink.addEventListener('click', function(event) {
-    alert('Вы переходите на страницу с вашим вишлистом!');
+  // Обработчик клика на ссылке вишлиста
+  const wishlistLink = document.querySelector('.wishlist-link');
+  if (wishlistLink) {
+    wishlistLink.addEventListener('click', function (event) {
+      alert('Вы переходите на страницу с вашим вишлистом!');
+    });
+  }
+
+  // Инициализация слайдера Swiper (внутри load!)
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    grabCursor: true,
+    centeredSlides: false,
+    speed: 500,
   });
-}
-
-// Инициализация слайдера Swiper
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  slidesPerView: 'auto',     // чтобы слайды подстраивались по ширине
-  spaceBetween: 20,          // расстояние между слайдами
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  grabCursor: true,          // курсор-рука при наведении
-  centeredSlides: false,     // не центрируем слайды
-  speed: 500,                // скорость перелистывания (мс)
 });
